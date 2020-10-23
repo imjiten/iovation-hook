@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.jestro.iovation"
+        version="0.7.0">
+
+  <name>IovationHook</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/iovationHook.js" target="js/iovationHook.js"/>
+
+  <js-module src="www/iovationHook.js" name="iovationHook">
+    <clobbers target="iovationHook" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="IovationHook">
+        <param name="android-package" value="com.jestro.iovation.IovationHook"/>
+      </feature>
+    </config-file>
+
+
+    <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+    <resource-file src="libs/fraudforce-lib-4.2.0-release.aar" target="libs/fraudforce-lib-4.2.0-release.aar" />
+
+    <source-file src="src/android/IovationHook.java" target-dir="src/com/jestro/iovation/"/>
+  </platform>
+
+  <!-- <platform name="ios">
+    
+    <config-file target="config.xml" parent="/widget">
+      <feature name="Hello">
+        <param name="ios-package" value="HWPHello" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/HWPHello.h" target-dir="HelloPlugin"/>
+    <source-file src="src/ios/HWPHello.m" target-dir="HelloPlugin"/>
+  </platform> -->
+
+</plugin>

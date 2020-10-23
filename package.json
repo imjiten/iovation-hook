@@ -1,0 +1,13 @@
+{
+  "name": "iovation-hook",
+  "version": "0.1.0",
+  "description": "IOVATION FRAUDFORCE ANDROID SDK LIBRARY",
+  "cordova": {
+    "id": "com.jestro.iovation",
+    "platforms": [
+      "android"
+    ]
+  },
+  "author": "HNR",
+  "license": "Apache-2"
+}
